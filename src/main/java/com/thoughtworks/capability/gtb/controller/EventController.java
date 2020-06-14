@@ -22,7 +22,7 @@ public class EventController {
   @GetMapping("/events/{id}")
   public EventVo getEventById(@PathVariable("id") String id) {
     UserVo user = new UserVo("3", "张三");
-    return new EventVo(id, "下载文件",EventType.UPLOAD, user);
+    return new EventVo(id, "下载文件", EventType.DOWNLOAD, LocalDateTime.now(), user);
   }
 
   @PostMapping("/events")
