@@ -3,6 +3,7 @@ package com.thoughtworks.capability.gtb.vo;
 import java.time.LocalDateTime;
 
 import com.fasterxml.jackson.annotation.JsonUnwrapped;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -21,6 +22,7 @@ public class EventVo {
   private String name;
   private EventType type;
   @JsonSerialize(using = LocalDateTimeSerializer.class)
+  @JsonDeserialize (using = LocalDateTimeDeserializer.class)
   private LocalDateTime time;
   @JsonUnwrapped
   private UserVo user;
