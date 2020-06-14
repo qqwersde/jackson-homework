@@ -20,6 +20,6 @@ public class EventVo {
   private String name;
   private EventType type;
   //private LocalDateTime time;
-  //@JsonUnwrapped
+  @JsonUnwrapped
   private UserVo user;
 }
